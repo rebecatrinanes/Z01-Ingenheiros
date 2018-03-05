@@ -42,5 +42,5 @@ before_script:
   - export VUNIT_MODELSIM_PATH=$HOME/modelsim_ase/bin/
 
 script:
-  - python 0-TesteInfra/testeVHDL.py
+  - python 0-Infra/testeVHDL.py
     
