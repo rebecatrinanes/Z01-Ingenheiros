@@ -8,8 +8,6 @@ date: Março - 2018
 
 Na página do repositório do seu FORK no github vá em *settings -> Integrations & services*, clique em *Add services* e procure pelo Travis CI, adicione ao seu projeto.
 
-![Travis github](gifs/githubtravis.png){width=70%}
-
 ### Travis CI ?
 
 Travis é um sistema de integração contínua que vai executar de forma automática alguns testes (criado por nós) no projeto e em caso de alguma falha irá notificar no github e por e-mail todos os integrantes.
