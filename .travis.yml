@@ -42,5 +42,7 @@ before_script:
   - export VUNIT_MODELSIM_PATH=$HOME/modelsim_ase/bin/
 
 script:
-  - python 0-Infra/testeVHDL.py
+oerge branch 'master' of github.com:Insper/Z01
+  - python Projetos/0-Infra/testeVHDL.py
+  - python Projetos/C-LogicaCombinacional/script/testeLogicaCombinacional.py
     
