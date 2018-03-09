@@ -13,13 +13,3 @@ entity Nor8Way is
 			h:   in  STD_LOGIC;
 			q:   out STD_LOGIC);
 end entity;
-
-architecture Comp of Nor8Way is
-
-	-- Declarations (optional)
-
-begin
-
-	q <= NOT(a OR b OR c OR d OR e OR f OR g OR h);
-
-end Comp;
