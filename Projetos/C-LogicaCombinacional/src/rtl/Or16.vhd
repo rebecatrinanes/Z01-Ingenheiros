@@ -9,4 +9,14 @@ entity Or16 is
 end entity;
 
 
-lala
+
+
+architecture Comp of Or16 is
+
+	-- Declarations (optional)
+
+begin
+
+	q <= a OR b;
+
+end Comp;
