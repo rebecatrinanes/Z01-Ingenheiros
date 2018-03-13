@@ -12,15 +12,4 @@ entity Or8Way is
 			g:   in  STD_LOGIC;
 			h:   in  STD_LOGIC;
 			q:   out STD_LOGIC);
-			
 end entity;
-
-architecture Comp of Or8Way is
-
-	-- Declarations (optional)
-
-begin
-
-	q <= a OR b OR c OR d OR e OR f OR g OR h;
-
-end Comp;
