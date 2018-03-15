@@ -1,0 +1,105 @@
+|TopLevel
+A => Or8Way:Or1.a
+B => Or8Way:Or1.b
+C => Not16:Not1.a[0]
+Q <= And16:And1.q[0]
+
+
+|TopLevel|Not16:Not1
+a[0] => q[0].DATAIN
+a[1] => q[1].DATAIN
+a[2] => q[2].DATAIN
+a[3] => q[3].DATAIN
+a[4] => q[4].DATAIN
+a[5] => q[5].DATAIN
+a[6] => q[6].DATAIN
+a[7] => q[7].DATAIN
+a[8] => q[8].DATAIN
+a[9] => q[9].DATAIN
+a[10] => q[10].DATAIN
+a[11] => q[11].DATAIN
+a[12] => q[12].DATAIN
+a[13] => q[13].DATAIN
+a[14] => q[14].DATAIN
+a[15] => q[15].DATAIN
+q[0] <= a[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= a[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= a[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= a[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= a[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= a[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= a[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= a[7].DB_MAX_OUTPUT_PORT_TYPE
+q[8] <= a[8].DB_MAX_OUTPUT_PORT_TYPE
+q[9] <= a[9].DB_MAX_OUTPUT_PORT_TYPE
+q[10] <= a[10].DB_MAX_OUTPUT_PORT_TYPE
+q[11] <= a[11].DB_MAX_OUTPUT_PORT_TYPE
+q[12] <= a[12].DB_MAX_OUTPUT_PORT_TYPE
+q[13] <= a[13].DB_MAX_OUTPUT_PORT_TYPE
+q[14] <= a[14].DB_MAX_OUTPUT_PORT_TYPE
+q[15] <= a[15].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|Or8Way:Or1
+a => q.IN0
+b => q.IN1
+c => q.IN1
+d => q.IN1
+e => q.IN1
+f => q.IN1
+g => q.IN1
+h => q.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|And16:And1
+a[0] => q.IN0
+a[1] => q.IN0
+a[2] => q.IN0
+a[3] => q.IN0
+a[4] => q.IN0
+a[5] => q.IN0
+a[6] => q.IN0
+a[7] => q.IN0
+a[8] => q.IN0
+a[9] => q.IN0
+a[10] => q.IN0
+a[11] => q.IN0
+a[12] => q.IN0
+a[13] => q.IN0
+a[14] => q.IN0
+a[15] => q.IN0
+b[0] => q.IN1
+b[1] => q.IN1
+b[2] => q.IN1
+b[3] => q.IN1
+b[4] => q.IN1
+b[5] => q.IN1
+b[6] => q.IN1
+b[7] => q.IN1
+b[8] => q.IN1
+b[9] => q.IN1
+b[10] => q.IN1
+b[11] => q.IN1
+b[12] => q.IN1
+b[13] => q.IN1
+b[14] => q.IN1
+b[15] => q.IN1
+q[0] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[8] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[9] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[10] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[11] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[12] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[13] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[14] <= q.DB_MAX_OUTPUT_PORT_TYPE
+q[15] <= q.DB_MAX_OUTPUT_PORT_TYPE
+
+
