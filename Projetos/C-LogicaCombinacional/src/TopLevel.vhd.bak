@@ -32,27 +32,12 @@ architecture rtl of TopLevel is
 --------------
 -- signals
 --------------
-signal fio1 : std_logic;
-signal fio2 : std_logic;
-
-
-not1: entity work.not1bit
-	port map (
-		a => SW(0);
-		q => fio1;
-	);
-	
-and1: entity work.and1bit
-	port map(
-	a => fio1;
-	b => SW(2);
-	q => fio2;
 
 ---------------
 -- implementacao
 ---------------
 begin
  
---  LEDR(0) <= SW(0);
-	 LEDR(0) <= fio2;
+  LEDR(0) <= SW(0);
+
 end rtl;
