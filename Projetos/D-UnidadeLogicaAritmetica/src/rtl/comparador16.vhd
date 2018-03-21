@@ -19,7 +19,7 @@ begin
 process(a,zr,ng)
 begin
 
-	if (a = '0000000000000000') 
+	if (a = "0000000000000000") 
 		then zr <= '1';
 	else
 		zr<= '0';
