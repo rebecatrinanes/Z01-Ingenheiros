@@ -31,12 +31,5 @@ begin
 		ng<= '0';
 	end if;
 
-
 end process;
-
-
---	zr <= '1' when a = "0000000000000000" else '0';
---	ng <= '1' when a(15) = '1' else '0';
-
-
 end architecture;
