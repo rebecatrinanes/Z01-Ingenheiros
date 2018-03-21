@@ -16,8 +16,27 @@ end comparador16;
 architecture rtl of comparador16 is
 
 begin
+process(a,zr,ng)
+begin
 
-	zr <= '1' when a = "0000000000000000" else '0';
-	ng <= '1' when a(15) = '1' else '0';
+	if (a = '0000000000000000') 
+		then zr <= '1';
+	else
+		zr<= '0';
+	end if;
+
+	if (a(15) = '1') 
+		then ng <= '1';
+	else
+		ng<= '0';
+	end if;
+
+
+end process;
+
+
+--	zr <= '1' when a = "0000000000000000" else '0';
+--	ng <= '1' when a(15) = '1' else '0';
+
 
 end architecture;
