@@ -22,7 +22,9 @@ vcom -work work ./Modulos/dispositivos/PLL/PLL_sim/PLL.vho
 vcom -work work ./Modulos/CircuitosSequenciais/BinaryDigit.vhd
 vcom -work work ./Modulos/CircuitosSequenciais/Register16.vhd
 
+vcom -work work ./Modulos/CPU/Computador.vhd
 vcom -work work ./Modulos/CPU/Computador_tb.vhd
+
 
 #################################
 # Carrega simulação no computador_tb
