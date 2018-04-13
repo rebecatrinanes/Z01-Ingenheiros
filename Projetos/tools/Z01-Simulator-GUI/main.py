@@ -360,7 +360,7 @@ class AppMain(Ui_MainWindow):
             print("Simulador está sendo executado...")
             return False
 
-        self.simulator_task = SimulatorTask("temp/", True, self.config_dialog_ui.simGUIBox.isChecked())
+        self.simulator_task = SimulatorTask("temp/", False, self.config_dialog_ui.simGUIBox.isChecked())
         rom_in              = tempfile.SpooledTemporaryFile(max_size=self.TEMP_MAX_RAM_USE, mode="w+")
         rom_out             = tempfile.SpooledTemporaryFile(max_size=self.TEMP_MAX_RAM_USE, mode="w+")
         lst_out             = tempfile.SpooledTemporaryFile(max_size=self.TEMP_MAX_RAM_USE, mode="w+")
@@ -501,7 +501,7 @@ class AppMain(Ui_MainWindow):
 
 if __name__ == "__main__":
     qapp = QApplication(sys.argv)
-    qapp.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
+    #qapp.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
     app = AppMain()
     app.show()
     sys.exit(qapp.exec_())
