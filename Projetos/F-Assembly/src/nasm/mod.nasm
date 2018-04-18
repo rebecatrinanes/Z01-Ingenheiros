@@ -7,14 +7,24 @@
 
 leaw $R1,%A
 movw (%A),%D
-movw %D,%S
+
 
 WHILE:
 leaw $R2,%A
-subw %S,(%A),%S
+subw %D,(%A),%S
+movw %S,%D
 leaw $WHILE,%A
-jge %S
+jg %S
 nop
 
+IF:
+leaw $FINAL,%A
+je %S
+nop
+
+leaw $R2,%A
+addw %D,(%A),%S
+
+FINAL:
 leaw $R0, %A
 movw %S, (%A)
