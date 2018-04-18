@@ -1,10 +1,10 @@
-leaw $8, %A
-
-
-
-
-
-
+leaw $1,%A
+incw %A
+leaww $DESENHA, %A
+END:
+leaw $END,%A
+jmp
+nop
 
 
 
