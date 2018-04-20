@@ -6,5 +6,5 @@ E -
 F - JUAN JORGE GARCIA	juanjg@gmail.com
 G - ALEXANDRE ALMEIDA EDINGTON	alexandreae@al.insper.edu.br
 H - LUCCA DELCHIARO COSTABILE	luccadelchiaro@gmail.com
-I - RAFAEL VIEIRA ROSENZVAIG    rafaelvr@al.insper.edu.com.br
+I - RAFAEL VIEIRA ROSENZVAIG    rafaelvr@al.insper.edu.br
 
