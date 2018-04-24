@@ -1,27 +1,36 @@
-# do /home/corsi/Dropbox/Insper/3s-ElementoDeSistemas/5-Repositorios/Z01/Projetos/G-Computador/Z01-Simulator-RTL/do/sim.do
+# do {C:\Users\Usuario\Desktop\Insper\2018\ELISI\Z01-Ingenheiros\Projetos\G-Computador\Z01-Simulator-RTL\do\sim.do}
 # 1
 # 1
 # 1
-# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 08:47:59 on Apr 20,2018
+# Start time: 17:03:21 on Apr 24,2018
 # vcom -reportprogress 300 -work work ../../C-LogicaCombinacional/src/rtl/And16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter8.vhd ../../C-LogicaCombinacional/src/rtl/DMux2Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux4Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux16.vhd ../../C-LogicaCombinacional/src/rtl/Mux2Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way16.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way16.vhd ../../C-LogicaCombinacional/src/rtl/Nand.vhd ../../C-LogicaCombinacional/src/rtl/Nor8Way.vhd ../../C-LogicaCombinacional/src/rtl/Not16.vhd ../../C-LogicaCombinacional/src/rtl/Or16.vhd ../../C-LogicaCombinacional/src/rtl/Or8Way.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity And16
+# -- Compiling architecture rtl of And16
 # -- Compiling entity BarrelShifter16
+# -- Compiling architecture Barrel16 of BarrelShifter16
 # -- Compiling entity BarrelShifter8
+# -- Compiling architecture Barrel of BarrelShifter8
 # -- Compiling entity DMux2Way
-# ** Error: ../../C-LogicaCombinacional/src/rtl/DMux4Way.vhd(1): near "library": (vcom-1576) expecting ';'.
-# ** Error: ../../C-LogicaCombinacional/src/rtl/DMux8Way.vhd(1): VHDL Compiler exiting
-# End time: 08:47:59 on Apr 20,2018, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 0
-# ** Error: /mnt/Dados/opt/altera/modelsim_ase/linuxaloem/vcom failed.
-# Error in macro /home/corsi/Dropbox/Insper/3s-ElementoDeSistemas/5-Repositorios/Z01/Projetos/G-Computador/Z01-Simulator-RTL/do/load.do line 3
-# /mnt/Dados/opt/altera/modelsim_ase/linuxaloem/vcom failed.
+# -- Compiling architecture Comp of DMux2Way
+# -- Compiling entity DMux4Way
+# -- Compiling architecture Behavioral of DMux4Way
+# -- Compiling entity DMux8Way
+# -- Compiling architecture behavioral of DMux8Way
+# -- Compiling entity Mux16
+# -- Compiling architecture Comp of Mux16
+# -- Compiling entity Mux2Way
+# -- Compiling architecture arq of Mux2Way
+# ** Error: ../../C-LogicaCombinacional/src/rtl/Mux2Way.vhd(16): Illegal sequential statement.
+# ** Error: ../../C-LogicaCombinacional/src/rtl/Mux2Way.vhd(17): Illegal sequential statement.
+# ** Error: ../../C-LogicaCombinacional/src/rtl/Mux2Way.vhd(19): VHDL Compiler exiting
+# End time: 17:03:21 on Apr 24,2018, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# ** Error: C:/intelFPGA_lite/17.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro C:/Users/Usuario/Desktop/Insper/2018/ELISI/Z01-Ingenheiros/Projetos/G-Computador/Z01-Simulator-RTL/do/load.do line 3
+# C:/intelFPGA_lite/17.1/modelsim_ase/win32aloem/vcom failed.
 #     while executing
 # "vcom -reportprogress 300 -work work ../../C-LogicaCombinacional/src/rtl/*.vhd"
-# Break key hit
-# Break key hit
-# Break key hit
