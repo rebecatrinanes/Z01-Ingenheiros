@@ -65,11 +65,17 @@ ARCHITECTURE logic OF MemoryIO IS
           clock		: IN STD_LOGIC  := '1';
           data		: IN STD_LOGIC_VECTOR (15 DOWNTO 0);
           wren		: IN STD_LOGIC ;
-          q		   : OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
+          q		: OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
       );
   end component;
 
 BEGIN
 
+m0: RAM16K port map (
+	ADRESS => adress,
+	CLK_FAST => clock,
+	INPUT => data,
+	LOAD => wren
+   		     );
 
 END logic;
