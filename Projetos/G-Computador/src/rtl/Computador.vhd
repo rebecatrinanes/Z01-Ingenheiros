@@ -125,9 +125,21 @@ BEGIN
     locked   => PLL_LOCKED
      );
 
+	MAIN_CPU : CPU PORT MAP(
+		clock => CLK_SLOW,
+		inM => OUTPUT_RAM,
+		instruction => INSTRUCTION,
+		reset => RST_CPU,
+		outM => INPUT,
+		writeM => LOAD,
+		addressM => ADDRESS,
+		pcout => PC
+
+		);
+
 
   -- Resets
-  RST_CPU <= RESET or (not LCD_INIT_OK) or (not PLL_LOCKED); -- REINICIA CPU
+    RST_CPU <= RESET or (not LCD_INIT_OK) or (not PLL_LOCKED); -- REINICIA CPU
 	RST_MEM <= RESET or (not PLL_LOCKED);                      -- REINICIA MemoryIO
 	RESET   <= NOT RESET_N;
 
