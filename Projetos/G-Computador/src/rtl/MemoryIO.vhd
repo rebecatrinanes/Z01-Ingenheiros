@@ -110,30 +110,4 @@ signal a1: STD_LOGIC_VECTOR(13 downto 0);
 signal f1: STD_LOGIC_VECTOR(15 downto 0);
 BEGIN
 
-s1<= "00" when ADDRESS < "011111111111111";
-s1<= "00" when ADDRESS = "011111111111111";
-s1<= "00" when ADDRESS = "101001011000000";
-s1<= "01" when ADDRESS > "011111111111111" and ADDRESS < "101001010111111";
-s1<= "01" when ADDRESS = "101001010111111";
-s1<= "10" when ADDRESS = "101001011000000";
-
-s2<= '0' when address = "101001011000000";
-s2<= '1' when address < "011111111111111";
-s2<= '1' when address = "011111111111111";
-
-a1<= ADDRESS(13 downto 0);
-c1: DMux4Way port map('1',s1,v0,v1,v2,vi);
-
-ram: RAM16K port map(a1,CLK_FAST,INPUT,v0,v3);
-
-f1 <= "000000" & SW;
-c2: Mux16 port map(f1, v3,s2,v4);
-OUTPUT <= v4;
-
-ledd: Register16 port map(CLK_SLOW,INPUT,v1,v5);
-LED <= v5(9 downto 0);
-
- screennn: Screen port map(INPUT,V2,a1,CLK_FAST,CLK_SLOW,RST,LCD_INIT_OK,LCD_CS_N,LCD_D,LCD_RD_N,LCD_RS,LCD_RESET_N,LCD_WR_N);
-
-
 END logic;
