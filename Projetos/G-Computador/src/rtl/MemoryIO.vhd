@@ -69,7 +69,45 @@ ARCHITECTURE logic OF MemoryIO IS
       );
   end component;
 
-BEGIN
+  component DMux4Way
+    port
+  (
+    a:   in  STD_LOGIC;
+    sel: in  STD_LOGIC_VECTOR(1 downto 0);
+    q0:  out STD_LOGIC;
+    q1:  out STD_LOGIC;
+    q2:  out STD_LOGIC;
+    q3:  out STD_LOGIC
+  );
+  end component;
 
+  component Mux16
+		port(
+    a:   in  STD_LOGIC_VECTOR(15 downto 0);
+    b:   in  STD_LOGIC_VECTOR(15 downto 0);
+    sel: in  STD_LOGIC;
+    q:   out STD_LOGIC_VECTOR(15 downto 0)
+	);
+	end component;
+
+  component Register16
+    port(
+    clock:   in STD_LOGIC;
+		input:   in STD_LOGIC_VECTOR(15 downto 0);
+		load:    in STD_LOGIC;
+		output: out STD_LOGIC_VECTOR(15 downto 0)
+  );
+  end component;
+
+
+
+
+signal s1: STD_LOGIC_VECTOR(1 downto 0);
+signal s2: STD_LOGIC;
+signal v0,v1,v2, vi: STD_LOGIC;
+signal v3,v4,v5: STD_LOGIC_VECTOR(15 DOWNTO 0);
+signal a1: STD_LOGIC_VECTOR(13 downto 0);
+signal f1: STD_LOGIC_VECTOR(15 downto 0);
+BEGIN
 
 END logic;
