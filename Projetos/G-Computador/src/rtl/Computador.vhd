@@ -131,7 +131,4 @@ BEGIN
 	RST_MEM <= RESET or (not PLL_LOCKED);                      -- REINICIA MemoryIO
 	RESET   <= NOT RESET_N;
 
-  -- LCD on
-  LCD_ON <= '1';
-
 end logic;
