@@ -358,7 +358,7 @@ class AppMain(Ui_MainWindow):
         valid = self.valid_binary(item)
 
         if valid:
-            self.data_changed = True
+            #self.data_changed = True
             self.on_ram_tooltip(item)
         else:
             item.setText("{0:0>16b}".format(0))
