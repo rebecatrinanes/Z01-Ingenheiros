@@ -70,6 +70,7 @@ public class CodeTest  {
 			assertTrue("movw %A, %D, (%A)"	,Code.dest(new String[] {"movw","%A","%D","(%A)"}).equals("0011"));
 			assertTrue("movw (%A), %D"		,Code.dest(new String[] {"movw","(%A)","%D"}).equals("0010"));
 
+
 			assertTrue("addw %A, %S, %S"	,Code.dest(new String[] {"addw","%A","%S","%S"}).equals("0100"));
 			assertTrue("addw %S, %D, %A"	,Code.dest(new String[] {"addw","%S","%D","%A"}).equals("1000"));
             assertTrue("addw (%A) %D %D",Code.dest(new String[] {"addw","(%A)","%D","%D"}).equals("0010"));
@@ -129,13 +130,14 @@ public class CodeTest  {
 	    	org.junit.Assume.assumeNoException(e);
 	    }  
 		try {
-			
+
         	assertTrue("movw %A %D",Code.comp(new String[] {"movw","%A","%D"}).equals("00110000"));
 			assertTrue("movw %S %D",Code.comp(new String[] {"movw","%S","%A"}).equals("01001100"));
 			assertTrue("movw %S %A",Code.comp(new String[] {"movw","%S","%A"}).equals("01001100"));
 			assertTrue("movw %S (%A)",Code.comp(new String[] {"movw","%S","(%A)"}).equals("11001100"));
 			assertTrue("movw %D %A",Code.comp(new String[] {"movw","%D","%A"}).equals("00001100"));
 			assertTrue("movw %D (%A)",Code.comp(new String[] {"movw","%D","(%A)"}).equals("10001100"));
+			assertTrue("movw (%A), %A"		,Code.comp(new String[] {"movw","(%A)","%A"}).equals("10110000"));
 
 			assertTrue("addw %A   %D %D",Code.comp(new String[] {"addw","%A","%D","%D"}).equals("00000010"));
 			assertTrue("addw (%A) %D %D",Code.comp(new String[] {"addw","(%A)","%D","%D"}).equals("10000010"));
@@ -162,14 +164,18 @@ public class CodeTest  {
         	assertTrue("andw %D %A %A",Code.comp(new String[] {"andw","%D","%A","%A"}).equals("00000000"));
         	assertTrue("orw (%A) %D %D",Code.comp(new String[] {"orw","(%A)","%D","%D"}).equals("10010101"));
         	assertTrue("orw %D %A %A",Code.comp(new String[] {"orw","%D","%A","%A"}).equals("00010101"));
-        	//assertTrue("jmp",Code.comp(new String[] {"jmp %"}).equals("10001100"));
+            assertTrue("subw (%A), $1, %A",Code.comp(new String[] {"subw","(%A)", "$1", "%A"}).equals("10110010"));
+
+
+
+            //assertTrue("jmp",Code.comp(new String[] {"jmp %"}).equals("10001100"));
         	//assertTrue("je",Code.comp(new String[] {"je"}).equals("10001100"));
         	//assertTrue("jne",Code.comp(new String[] {"jne"}).equals("10001100"));
         	//assertTrue("jg",Code.comp(new String[] {"jg"}).equals("10001100"));
         	//assertTrue("jge",Code.comp(new String[] {"jge"}).equals("10001100"));
         	//assertTrue("jl",Code.comp(new String[] {"jl"}).equals("10001100"));
         	//assertTrue("jle",Code.comp(new String[] {"jle"}).equals("10001100"));
-        	
+
 		} catch(Exception e) {
 		  	e.printStackTrace();
 		}
