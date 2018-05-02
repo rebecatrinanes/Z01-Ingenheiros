@@ -11,7 +11,6 @@ public class SymbolTable{
 	
 	Map<String, Integer> dictionary = new HashMap<String, Integer>();
 	
-
     public SymbolTable() {
     	    	
 		for (int i=0; i<16; i++){
@@ -38,7 +37,7 @@ public class SymbolTable{
     
     public Integer getAddress(String symbol) {
     	dictionary.get(symbol);
-    	return null;
+    	return dictionary.get(symbol);
     }
 
 }
