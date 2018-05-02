@@ -8,7 +8,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SymbolTable{
-	
 	Map<String, Integer> dictionary = new HashMap<String, Integer>();
 	
     public SymbolTable() {
