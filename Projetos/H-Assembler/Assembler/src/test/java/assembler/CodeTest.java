@@ -134,7 +134,7 @@ public class CodeTest  {
         	assertTrue("movw %A %D",Code.comp(new String[] {"movw","%A","%D"}).equals("00110000"));
 			assertTrue("movw %S %D",Code.comp(new String[] {"movw","%S","%A"}).equals("01001100"));
 			assertTrue("movw %S %A",Code.comp(new String[] {"movw","%S","%A"}).equals("01001100"));
-			assertTrue("movw %S (%A)",Code.comp(new String[] {"movw","%S","(%A)"}).equals("11001100"));
+			assertTrue("movw %S (%A)",Code.comp(new String[] {"movw","%S","(%A)"}).equals("01001100"));
 			assertTrue("movw %D %A",Code.comp(new String[] {"movw","%D","%A"}).equals("00001100"));
 			assertTrue("movw %D (%A)",Code.comp(new String[] {"movw","%D","(%A)"}).equals("00001100"));
 			assertTrue("movw (%A), %A"		,Code.comp(new String[] {"movw","(%A)","%A"}).equals("10110000"));
