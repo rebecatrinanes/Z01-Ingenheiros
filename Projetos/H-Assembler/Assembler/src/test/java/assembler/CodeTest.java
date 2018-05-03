@@ -166,15 +166,13 @@ public class CodeTest  {
         	assertTrue("orw %D %A %A",Code.comp(new String[] {"orw","%D","%A","%A"}).equals("00010101"));
             assertTrue("subw (%A), $1, %A",Code.comp(new String[] {"subw","(%A)", "$1", "%A"}).equals("10110010"));
 
-
-
-            //assertTrue("jmp",Code.comp(new String[] {"jmp %"}).equals("10001100"));
-        	//assertTrue("je",Code.comp(new String[] {"je"}).equals("10001100"));
-        	//assertTrue("jne",Code.comp(new String[] {"jne"}).equals("10001100"));
-        	//assertTrue("jg",Code.comp(new String[] {"jg"}).equals("10001100"));
-        	//assertTrue("jge",Code.comp(new String[] {"jge"}).equals("10001100"));
-        	//assertTrue("jl",Code.comp(new String[] {"jl"}).equals("10001100"));
-        	//assertTrue("jle",Code.comp(new String[] {"jle"}).equals("10001100"));
+            assertTrue("jmp %D",Code.comp(new String[] {"jmp", "%D"}).equals("00001100"));
+        	assertTrue("je %D",Code.comp(new String[] {"je", "%D"}).equals("00001100"));
+        	assertTrue("jne %D",Code.comp(new String[] {"jne", "%D"}).equals("00001100"));
+        	assertTrue("jg %D",Code.comp(new String[] {"jg", "%D"}).equals("00001100"));
+        	assertTrue("jge %D",Code.comp(new String[] {"jge", "%D"}).equals("00001100"));
+        	assertTrue("jl %S",Code.comp(new String[] {"jl", "%S"}).equals("01001100"));
+        	assertTrue("jle %S",Code.comp(new String[] {"jle", "%S"}).equals("01001100"));
 
 		} catch(Exception e) {
 		  	e.printStackTrace();
