@@ -144,10 +144,10 @@ public class CodeTest  {
 			assertTrue("addw %A   %S %D",Code.comp(new String[] {"addw","%A","%S","%D"}).equals("01000010"));
 			assertTrue("addw (%A) %S %D",Code.comp(new String[] {"addw","(%A)","%S","%D"}).equals("11000010"));
 
-			assertTrue("incw %A"  ,Code.comp(new String[] {"incw","%A"}).equals("00111011"));
+			assertTrue("incw %A"  ,Code.comp(new String[] {"incw","%A"}).equals("00110111"));
 			assertTrue("incw %S"  ,Code.comp(new String[] {"incw","%S"}).equals("01011111"));
 			assertTrue("incw %D"  ,Code.comp(new String[] {"incw","%D"}).equals("00011111"));
-			assertTrue("incw (%A)",Code.comp(new String[] {"incw","(%A)"}).equals("10111011"));
+			assertTrue("incw (%A)",Code.comp(new String[] {"incw","(%A)"}).equals("10110111"));
 
 
         	//assertTrue("nop",Code.comp(new String[] {"nop"}).equals("10101010"));
