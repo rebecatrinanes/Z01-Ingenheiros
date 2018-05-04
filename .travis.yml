@@ -47,4 +47,8 @@ script:
 #  - python Projetos/D-UnidadeLogicaAritmetica/script/testeULA.py
 #  - python Projetos/E-LogicaSequencial/script/testeLogicaSequencial.py
 #  - python Projetos/F-Assembly/scripts/testeAssembly.py
+<<<<<<< HEAD
   - python Projetos/G-Computador/scripts/testeAssemblyMyCPU.py
+=======
+  - python Projetos/G-Computador/scripts/testeAssemblyMyCPU.py
+>>>>>>> 0b68acabd3080c8eb4684be38087768655c4f269
