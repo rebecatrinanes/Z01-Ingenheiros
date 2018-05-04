@@ -22,7 +22,7 @@ public class CodeTest  {
     }
 	
     /**
-     * Teste para conversão para binário
+     * Teste para conversï¿½o para binï¿½rio
      */
     @Test
     public void testCode_toBinary() {
@@ -49,7 +49,7 @@ public class CodeTest  {
     }
 
 	/**
-     * Teste para geração de código para Destino
+     * Teste para geraï¿½ï¿½o de cï¿½digo para Destino
      */
     @Test
     public void testCode_Destine() {
@@ -118,7 +118,7 @@ public class CodeTest  {
     }
 
 	/**
-     * Teste para geração de código para Calculo
+     * Teste para geraï¿½ï¿½o de cï¿½digo para Calculo
      */
     //@Ignore
     @Test
@@ -148,6 +148,7 @@ public class CodeTest  {
 			assertTrue("incw %S"  ,Code.comp(new String[] {"incw","%S"}).equals("01011111"));
 			assertTrue("incw %D"  ,Code.comp(new String[] {"incw","%D"}).equals("00011111"));
 			assertTrue("incw (%A)",Code.comp(new String[] {"incw","(%A)"}).equals("10111011"));
+
 
         	//assertTrue("nop",Code.comp(new String[] {"nop"}).equals("10101010"));
         	assertTrue("movw (%A) %D",Code.comp(new String[] {"movw","(%A)","%D"}).equals("10110000"));
@@ -181,7 +182,7 @@ public class CodeTest  {
     }
 
 	/**
-     * Teste para geração de código para Calculo
+     * Teste para geraï¿½ï¿½o de cï¿½digo para Calculo
      */
     @Test
     public void testCode_Jump() {
