@@ -6,14 +6,14 @@
 package assembler;
 
 /**
- * Traduz mnemônicos da linguagem assembly para códigos binários da arquitetura Z0.
+ * Traduz mnemÃ´nicos da linguagem assembly para cÃ³digos binÃ¡rios da arquitetura Z0.
  */
 public class Code {
 
     /**
-     * Retorna o código binário do(s) registrador(es) que vão receber o valor da instrução.
-     * @param  mnemnonic vetor de mnemônicos "instrução" a ser analisada.
-     * @return Opcode (String de 4 bits) com código em linguagem de máquina para a instrução.
+     * Retorna o cÃ³digo binÃ¡rio do(s) registrador(es) que vÃ£o receber o valor da instruÃ§Ã£o.
+     * @param  mnemnonic vetor de mnemÃ´nicos "instruÃ§Ã£o" a ser analisada.
+     * @return Opcode (String de 4 bits) com cÃ³digo em linguagem de mÃ¡quina para a instruÃ§Ã£o.
      */
     public static String dest(String[] mnemnonic) {
     	String Dest = "0000";
@@ -133,9 +133,9 @@ public class Code {
     }
     
     /**
-     * Retorna o código binário do mnemônico para realizar uma operação de cálculo.
-     * @param  mnemnonic vetor de mnemônicos "instrução" a ser analisada.
-     * @return Opcode (String de 8 bits) com código em linguagem de máquina para a instrução.
+     * Retorna o cÃ³digo binÃ¡rio do mnemÃ´nico para realizar uma operaÃ§Ã£o de cÃ¡lculo.
+     * @param  mnemnonic vetor de mnemÃ´nicos "instruÃ§Ã£o" a ser analisada.
+     * @return Opcode (String de 8 bits) com cÃ³digo em linguagem de mÃ¡quina para a instruÃ§Ã£o.
      */
     public static String comp(String[] mnemnonic) {
     	String Calc = "10101010";
@@ -156,10 +156,10 @@ public class Code {
     	}
     	else if (mnemnonic[0] == "incw") {
     		if (mnemnonic[1] == "%A") {
-    			Calc = "00111011";
+    			Calc = "00110111";
     		}
     		else if (mnemnonic[1] == "(%A)") {
-    			Calc = "10111011";
+    			Calc = "10110111";
     		}
     		else if (mnemnonic[1] == "%S") {
     			Calc = "01011111";
@@ -388,9 +388,9 @@ public class Code {
     }
 
     /**
-     * Retorna o código binário do mnemônico para realizar uma operação de jump (salto).
-     * @param  mnemnonic vetor de mnemônicos "instrução" a ser analisada.
-     * @return Opcode (String de 3 bits) com código em linguagem de máquina para a instrução.
+     * Retorna o cÃ³digo binÃ¡rio do mnemÃ´nico para realizar uma operaÃ§Ã£o de jump (salto).
+     * @param  mnemnonic vetor de mnemÃ´nicos "instruÃ§Ã£o" a ser analisada.
+     * @return Opcode (String de 3 bits) com cÃ³digo em linguagem de mÃ¡quina para a instruÃ§Ã£o.
      */
     public static String jump(String[] mnemnonic) {
     	String JumpBin = "000";
@@ -424,9 +424,9 @@ public class Code {
     
 
     /**
-     * Retorna o código binário de um valor decimal armazenado numa String.
-     * @param  symbol valor numérico decimal armazenado em uma String.
-     * @return Valor em binário (String de 15 bits) representado com 0s e 1s.
+     * Retorna o cÃ³digo binÃ¡rio de um valor decimal armazenado numa String.
+     * @param  symbol valor numÃ©rico decimal armazenado em uma String.
+     * @return Valor em binÃ¡rio (String de 15 bits) representado com 0s e 1s.
      */
     public static String toBinary(String symbol) {
     	int as;	
@@ -436,7 +436,7 @@ public class Code {
     		while (binario.length() < 15) {
     			int b = d % 2;
     			binario.append(b);
-    			d = d >> 1; // � a divis�o que voc� deseja
+    			d = d >> 1; // é a divisão que você deseja
     		}
     		return binario.reverse().toString(); // inverte a ordem e imprime
     	}
