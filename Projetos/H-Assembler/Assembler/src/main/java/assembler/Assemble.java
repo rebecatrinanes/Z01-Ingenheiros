@@ -82,7 +82,7 @@ public class Assemble {
     	while(parserFill_symbols.advance()) { //avança de linha em linha buscando instruções novas
     		
     		if(parserFill_symbols.commandType(parserFill_symbols.command()) == CommandType.A_COMMAND) {
-    			boolean isNumeric = parserFill_symbols.command().chars().allMatch(Character :: isDigit);
+    			boolean isNumeric = (parserFill_symbols.symbol(parserFill_symbols.command())).chars().allMatch(Character :: isDigit);
     			if (!isNumeric){
     				 			
     			 if (!table.contains(parserFill_symbols.symbol(parserFill_symbols.command()))) {
@@ -107,18 +107,31 @@ public class Assemble {
         Parser parser = new Parser(inputFile);  // abre o arquivo e aponta para o começo
         String gMCtext = "";
         while(parser.advance()) { //avança de linha em linha	
+        	gMCtext = "";
+
         	if(parser.commandType(parser.command()) == CommandType.A_COMMAND) { //Entra se o comando for do tipo A
-        		gMCtext += "0";
-        		gMCtext += Code.toBinary(parser.symbol(parser.command()));
+			    boolean isNumeric = (parser.symbol(parser.command())).chars().allMatch(Character :: isDigit);
+	    		if (isNumeric){
+	        		gMCtext += "0";
+	        		gMCtext += Code.toBinary(parser.symbol(parser.command()));
+				}
+		        else{
+					gMCtext += "0";
+					gMCtext += Code.toBinary((table.getAddress(parser.symbol(parser.command()))).toString());
+				}
+				outHACK.println(gMCtext);
         	}
         	if(parser.commandType(parser.command()) == CommandType.C_COMMAND) { //Entra se o comando for do tipo C
         		gMCtext += "1";
         		gMCtext += Code.dest(parser.instruction(parser.command()));
         		gMCtext += Code.comp(parser.instruction(parser.command()));
         		gMCtext += Code.jump(parser.instruction(parser.command()));
+
+        		outHACK.println(gMCtext);
     		}
-        	outHACK.println(gMCtext);
-        }
+
+		}
+        
     }
         
 

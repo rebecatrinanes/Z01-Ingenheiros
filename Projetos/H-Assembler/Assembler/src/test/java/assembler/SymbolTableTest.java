@@ -91,16 +91,13 @@ public class SymbolTableTest {
             assertTrue("Testando se Tabela de Símbolos CONTÉM R15",table.contains("R15"));
             assertTrue("Verificando se R15 vale 15 na Tabela de Símbolos",table.getAddress("R15")==15);
 
-<<<<<<< HEAD
-            assertTrue("Testando se Tabela de SÃ­mbolos CONTÃ‰M SCREEN",table.contains("SCREEN"));
-            assertTrue("Verificando se SCREEN vale 16384 na Tabela de SÃ­mbolos",table.getAddress("SCREEN")==16384);
-=======
+
             assertTrue("Testando se Tabela de Símbolos CONTÉM LED",table.contains("LED"));
             assertTrue("Verificando se LED vale 21184 na Tabela de Símbolos",table.getAddress("LED")==21184);
 
             assertTrue("Testando se Tabela de Símbolos CONTÉM SW",table.contains("SW"));
             assertTrue("Verificando se SW vale 21185 na Tabela de Símbolos",table.getAddress("SW")==21185);
->>>>>>> dc56720515ade62e1ef2d55e81cc86d04bc92e54
+
 
             assertTrue("Testando se Tabela de Símbolos CONTÉM SCREEN",table.contains("SCREEN"));
             assertTrue("Verificando se SCREEN vale 16384 na Tabela de Símbolos",table.getAddress("SCREEN")==16384);
