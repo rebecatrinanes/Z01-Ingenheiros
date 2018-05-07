@@ -34,7 +34,8 @@ public class Assemble {
         outHACK    = new PrintWriter(new FileWriter(hackFile));  // Cria saída do print para
                                                                  // o arquivo hackfile
         table      = new SymbolTable();                          // Cria e inicializa a tabela de simbolos
-
+       
+        
     }
 
     /**
@@ -45,6 +46,49 @@ public class Assemble {
      * Dependencia : Parser, SymbolTable
      */
     public void fillSymbolTable() throws FileNotFoundException, IOException {
+    	
+    	Parser parserFill_labels = new Parser(inputFile);
+    	Parser parserFill_symbols = new Parser(inputFile);
+    	
+    	private int numero_de_linhas = 0; // conta numero de linhas que passa a cada iteração
+    	private int endereco_ROM = 16; // qual o prox endereço ROM a ser armazenado
+    	
+    	/*
+    	 * leaw $1, %A
+    	 * loop: 
+    	 * leaw $CNT, %A
+    	 * leaw $loop, %A
+    	 * leaw %CNT2, %A
+    	 * jmp 
+    	 * nop
+    	 * END:
+    	 * loop:
+    	 */
+    	
+    	while(parserFill_labels.advance()) { //avança de linha em linha procurando labels novos
+    		
+    		if(parserFill.commandType() == CommandType.L_COMMAND) { //Entra se o comando for label
+    			
+    			table.addEntry(parserFill_labels.label(parserFill_labels.command()), new Integer(numero_de_linhas+1)) //adiciona o endereço da label como a linha de baixo
+    				
+    		}
+    		
+    		numero_de_linhas += 1;
+    	}
+    	
+    	while(parserFill_symbols.advance()) { //avança de linha em linha buscando instruções novas
+    		
+    		if(parserFill.commandType() == CommandType.A_COMMAND) {
+    			
+    			 if (!table.contains(parserFill_symbols.symbol(parserFill_symbols.command()))) {
+    				 
+    	    		table.addEntry(parserFill_symbols.label(parserFill_lsymbols.command()), new Integer(enedereco_ROM)) //adiciona o endereço do symbol no endereço da ROM a partir do 16			 
+    				endereco_ROM += 1;
+    			 }
+    			
+    		}
+    		
+    	}
     }
 
     /**
@@ -56,7 +100,20 @@ public class Assemble {
      */
     public void generateMachineCode() throws FileNotFoundException, IOException{
         Parser parser = new Parser(inputFile);  // abre o arquivo e aponta para o começo
-
+        String gMCtext = "";
+        while(parser.advance()) { //avança de linha em linha	
+        	if(parser.commandType() == CommandType.A_COMMAND) { //Entra se o comando for do tipo A
+        		gMCtext += dest(parser.symbol(parser.command()));
+        		gMCtext += comp(parser.symbol(parser.command()));
+        		gMCtext += jump(parser.symbol(parser.command()));
+    		}
+        	if(parser.commandType() == CommandType.C_COMMAND) { //Entra se o comando for do tipo C
+        		gMCtext += dest(parser.instruction(parser.command()));
+        		gMCtext += comp(parser.instruction(parser.command()));
+        		gMCtext += jump(parser.instruction(parser.command()));
+    		}
+        	gMCtext += "\n";
+        }
     }
 
     /**
