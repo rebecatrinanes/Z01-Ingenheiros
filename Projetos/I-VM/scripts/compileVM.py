@@ -21,11 +21,11 @@ def compileVM(bootstrap, jar):
     nasmDir = pwd+"/../bin/nasm/"
 
     # compila
-    #print("------------------------------")
-    #print("- Translating Examples files  ")
-    #print("- to I-VMTranslator/bin/nasm/ ")
-    #print("------------------------------")
-    #vmtranslator(bootstrap, vmExDir, nasmDir, jar=jar)
+    print("------------------------------")
+    print("- Translating Examples files  ")
+    print("- to I-VMTranslator/bin/nasm/ ")
+    print("------------------------------")
+    vmtranslator(bootstrap, vmExDir, nasmDir, jar=jar)
 
     print("------------------------------")
     print("- Translating src files       ")
