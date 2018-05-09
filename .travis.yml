@@ -49,3 +49,4 @@ script:
 #  - python Projetos/F-Assembly/scripts/testeAssembly.py
    - python Projetos/G-Computador/scripts/testeAssemblyMyCPU.py
    - python Projetos/H-Assembler/scripts/testeAssemblyMyAssembler.py
+   - python Projetos/I-VM/scripts/testeVm.py
